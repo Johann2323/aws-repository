@@ -26,4 +26,38 @@ public class Curso {
 	
 	@Transient
 	private String ImagenURL;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getImagenPhat() {
+		return imagenPhat;
+	}
+
+	public void setImagenPhat(String imagenPhat) {
+		this.imagenPhat = imagenPhat;
+	}
+
+	public String getImagenURL() {
+		return ImagenURL;
+	}
+
+	public void setImagenURL(String imagenURL) {
+		ImagenURL = imagenURL;
+	}
+	
+	
 }

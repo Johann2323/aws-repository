@@ -8,6 +8,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
@@ -33,7 +34,9 @@ public class S3Service {
 		objectMetadata.setContentType(multipartField.getContentType());
 		
 		try {
-			PutObjectRequest putObjectRequest = new PutObjectRequest(Bucket, key, multipartField.getInputStream(), objectMetadata);
+			PutObjectRequest putObjectRequest = new PutObjectRequest(Bucket, key, multipartField.getInputStream(), objectMetadata)
+					
+					.withCannedAcl(CannedAccessControlList.PublicRead);
 					s3Client.putObject(putObjectRequest);
 					return key;
 		} catch (Exception ex) {
