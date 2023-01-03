@@ -34,9 +34,8 @@ public class S3Service {
 		objectMetadata.setContentType(multipartField.getContentType());
 		
 		try {
-			PutObjectRequest putObjectRequest = new PutObjectRequest(Bucket, key, multipartField.getInputStream(), objectMetadata)
-					
-					.withCannedAcl(CannedAccessControlList.PublicRead);
+			PutObjectRequest putObjectRequest = new PutObjectRequest(Bucket, key, multipartField.getInputStream(), objectMetadata);
+
 					s3Client.putObject(putObjectRequest);
 					return key;
 		} catch (Exception ex) {
