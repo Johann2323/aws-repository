@@ -21,6 +21,8 @@ public class Curso {
 	
 	@NonNull
 	private String titulo;
+	private String autor;
+	private String descripcion;
 	
 	private String imagenPhat;
 	
@@ -58,6 +60,24 @@ public class Curso {
 	public void setImagenURL(String imagenURL) {
 		ImagenURL = imagenURL;
 	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	
 	
 	
 }

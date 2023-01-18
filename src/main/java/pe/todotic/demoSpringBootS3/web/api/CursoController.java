@@ -17,6 +17,7 @@ import pe.todotic.demoSpringBootS3.service.S3Service;
 
 @RestController
 @RequestMapping("/api/cursos")
+@CrossOrigin(origins = {"http://localhost:3000"})
 public class CursoController {
 
 	
