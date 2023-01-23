@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class Curso {
+public class libros {
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -23,58 +23,45 @@ public class Curso {
 	private String titulo;
 	private String autor;
 	private String descripcion;
-	
 	private String imagenPhat;
+	private String imagenURL;
 	
-	@Transient
-	private String ImagenURL;
-
+	
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	public String getTitulo() {
 		return titulo;
 	}
-
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
-	public String getImagenPhat() {
-		return imagenPhat;
-	}
-
-	public void setImagenPhat(String imagenPhat) {
-		this.imagenPhat = imagenPhat;
-	}
-
-	public String getImagenURL() {
-		return ImagenURL;
-	}
-
-	public void setImagenURL(String imagenURL) {
-		ImagenURL = imagenURL;
-	}
-
 	public String getAutor() {
 		return autor;
 	}
-
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-
 	public String getDescripcion() {
 		return descripcion;
 	}
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	public String getImagenPhat() {
+		return imagenPhat;
+	}
+	public void setImagenPhat(String imagenPhat) {
+		this.imagenPhat = imagenPhat;
+	}
+	public String getImagenURL() {
+		return imagenURL;
+	}
+	public void setImagenURL(String imagenURL) {
+		imagenURL = imagenURL;
 	}
 	
 	
