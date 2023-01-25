@@ -72,6 +72,12 @@ public class S3Service implements CursoService {
 		
 	}
 
+	
+	@Override
+	public libros findById(int id) {
+		
+		return libroC.findById(id).orElse(null);
+	}
 
 	/*@Override
 	public Optional<libros> findByLibro(String libro) {
@@ -119,6 +125,8 @@ public class S3Service implements CursoService {
 	public String getObjectUrl(String key) {
 		return String.format("https://%s.s3.amazonaws.com/%s", Bucket, key);
 	}
+
+	
 
 
 

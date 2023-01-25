@@ -49,13 +49,17 @@ public class CursoController {
 	}
 	
 	
-	/*@PutMapping("/editarLibro/{id}")
+	@PutMapping("/editarLibro/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public libros editar(@RequestBody libros libro, @PathVariable int id) {
 		libros libroactual = s3Service.findById(id);
 		libroactual.setTitulo(libro.getTitulo());
+		libroactual.setAutor(libro.getAutor());
+		libroactual.setDescripcion(libro.getDescripcion());
+		libroactual.setImagenPhat(libro.getImagenPhat());
+		libroactual.setImagenURL(libro.getImagenURL());
 		return s3Service.save(libroactual);
-	}*/
+	}
 	
 	@DeleteMapping("/eliminarLibro/{id}")
 	@ResponseStatus(HttpStatus.CREATED)

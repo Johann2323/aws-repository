@@ -61,7 +61,7 @@ public class libros {
 		return imagenURL;
 	}
 	public void setImagenURL(String imagenURL) {
-		imagenURL = imagenURL;
+		this.imagenURL = imagenURL;
 	}
 	
 	

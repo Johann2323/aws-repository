@@ -14,7 +14,7 @@ public interface CursoService {
 	public Optional<libros> findById(Integer id);
 	public libros save(libros libro);
 	public void deleteById(Integer id);
-	
+	public libros findById(int id);
 
 
 	/*Optional<libros> findByLibro(String libro);*/
