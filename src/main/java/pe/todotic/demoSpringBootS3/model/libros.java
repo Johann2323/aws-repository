@@ -24,6 +24,7 @@ public class libros {
 	private String autor;
 	private String descripcion;
 	private String imagenPhat;
+	@Transient
 	private String imagenURL;
 	
 	
