@@ -58,7 +58,15 @@ public class CursoController {
 		libroactual.setDescripcion(libro.getDescripcion());
 		libroactual.setImagenPhat(libro.getImagenPhat());
 		libroactual.setImagenURL(libro.getImagenURL());
+		System.out.println("Aquí"+libroactual.getId()+" "+ libroactual.getAutor());
 		return s3Service.save(libroactual);
+		
+	}
+	
+	@GetMapping ("/buscarid/{id}")
+	public libros show(@PathVariable int id) {
+		return s3Service.findById(id);
+		
 	}
 	
 	@DeleteMapping("/eliminarLibro/{id}")
