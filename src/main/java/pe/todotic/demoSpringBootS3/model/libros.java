@@ -22,7 +22,13 @@ public class libros {
 	@NonNull
 	private String titulo;
 	private String autor;
+	
+	private String editorial;
+	private double precio;
+	private int stock;
+	
 	private String descripcion;
+	private String categoria;
 	private String imagenPhat;
 	@Transient
 	private String imagenURL;
@@ -64,6 +70,33 @@ public class libros {
 	public void setImagenURL(String imagenURL) {
 		this.imagenURL = imagenURL;
 	}
+	public String getEditorial() {
+		return editorial;
+	}
+	public void setEditorial(String editorial) {
+		this.editorial = editorial;
+	}
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	public int getStock() {
+		return stock;
+	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	public String getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+	
+	
+	
 	
 	
 	

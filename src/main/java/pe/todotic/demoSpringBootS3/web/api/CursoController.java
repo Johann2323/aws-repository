@@ -55,9 +55,14 @@ public class CursoController {
 		libros libroactual = s3Service.findById(id);
 		libroactual.setTitulo(libro.getTitulo());
 		libroactual.setAutor(libro.getAutor());
+		libroactual.setEditorial(libro.getEditorial());
+		libroactual.setPrecio(libro.getPrecio());
+		libroactual.setStock(libro.getStock());
+		libroactual.setCategoria(libro.getCategoria());
 		libroactual.setDescripcion(libro.getDescripcion());
 		libroactual.setImagenPhat(libro.getImagenPhat());
 		libroactual.setImagenURL(libro.getImagenURL());
+		
 		System.out.println("Aquí"+libroactual.getId()+" "+ libroactual.getAutor());
 		return s3Service.save(libroactual);
 		
