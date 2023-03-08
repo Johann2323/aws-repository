@@ -3,16 +3,20 @@ package pe.todotic.demoSpringBootS3.service;
 import java.awt.print.Pageable;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pe.todotic.demoSpringBootS3.model.pedido;
 import pe.todotic.demoSpringBootS3.model.usuarios;
 import pe.todotic.demoSpringBootS3.respository.PedidoRepository;
 
+@Service
 public class PedidoService implements PedidoServiceImp{
 
+	@Autowired
 	private PedidoRepository pedidoR;
 	
 	@Override
@@ -29,8 +33,7 @@ public class PedidoService implements PedidoServiceImp{
 	}
 
 	@Override
-	@Transactional(readOnly = true)
-	public Optional<pedido> findById(Integer id) {
+		public Optional<pedido> findById(Integer id) {
 		// TODO Auto-generated method stub
 		return pedidoR.findById(id);
 	}
@@ -52,5 +55,7 @@ public class PedidoService implements PedidoServiceImp{
 		// TODO Auto-generated method stub
 		return pedidoR.findById(id).orElse(null);
 	}
+
+	
 
 }

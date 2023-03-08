@@ -1,5 +1,7 @@
 package pe.todotic.demoSpringBootS3.model;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +21,7 @@ public class pedido {
 	
 	private Integer id_usuario;
 	private Integer id_libro;
-	private Data fecha_pedido;
+	private Date fecha_pedido;
 	private String estado;
 	private String direccion_envio;
 	private Integer total;
@@ -41,10 +43,10 @@ public class pedido {
 	public void setId_libro(Integer id_libro) {
 		this.id_libro = id_libro;
 	}
-	public Data getFecha_pedido() {
+	public Date getFecha_pedido() {
 		return fecha_pedido;
 	}
-	public void setFecha_pedido(Data fecha_pedido) {
+	public void setFecha_pedido(Date fecha_pedido) {
 		this.fecha_pedido = fecha_pedido;
 	}
 	public String getEstado() {
