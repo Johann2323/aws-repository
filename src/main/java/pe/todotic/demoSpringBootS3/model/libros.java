@@ -33,6 +33,10 @@ public class libros {
 	@Transient
 	private String imagenURL;
 	
+	private String imagenpost;
+	@Transient
+	private String imagenget;
+	
 	
 	public Integer getId() {
 		return id;
@@ -93,6 +97,18 @@ public class libros {
 	}
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+	public String getImagenpost() {
+		return imagenpost;
+	}
+	public void setImagenpost(String imagenpost) {
+		this.imagenpost = imagenpost;
+	}
+	public String getImagenget() {
+		return imagenget;
+	}
+	public void setImagenget(String imagenget) {
+		this.imagenget = imagenget;
 	}
 	
 	

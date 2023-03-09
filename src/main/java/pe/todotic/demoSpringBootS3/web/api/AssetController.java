@@ -36,8 +36,33 @@ public class AssetController {
 		return result;
 		
 	}
+	
+	@PostMapping("/uploadimg")
+	Map<String, String> uploadi(@RequestParam MultipartFile file){
+		String key = s3Service.putObject(file);
+		
+		Map<String, String> result = new HashMap<>();
+		result.put("key", key);
+		result.put("url", s3Service.getObjectUrl(key));
+		
+		return result;
+		
+	}
+	
 	@GetMapping(value = "/get-object", params = "key")
 	ResponseEntity<ByteArrayResource> getObject(@RequestParam String key){
+		Asset asset = s3Service.getObject(key);
+		ByteArrayResource resource = new ByteArrayResource(asset.getContent());
+		
+		return ResponseEntity
+				.ok()
+				.header("Content-Type", asset.getContentType())
+				.contentLength(asset.getContent().length)
+				.body(resource);
+	}
+	
+	@GetMapping(value = "/get-objectimg", params = "key")
+	ResponseEntity<ByteArrayResource> getObject1(@RequestParam String key){
 		Asset asset = s3Service.getObject(key);
 		ByteArrayResource resource = new ByteArrayResource(asset.getContent());
 		

@@ -37,6 +37,7 @@ public class CursoController {
 		return cursoRepository.findAll()
 				.stream()
 				.peek(curso -> curso.setImagenURL(s3Service.getObjectUrl(curso.getImagenPhat())))
+				.peek(curso -> curso.setImagenget(s3Service.getObjectUrl(curso.getImagenpost())))
 				.collect(Collectors.toList());
 	}
 	
