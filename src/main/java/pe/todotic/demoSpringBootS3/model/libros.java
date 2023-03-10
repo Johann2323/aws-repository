@@ -1,5 +1,7 @@
 package pe.todotic.demoSpringBootS3.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -36,6 +38,8 @@ public class libros {
 	private String imagenpost;
 	@Transient
 	private String imagenget;
+	
+	private Date fechacreacion;
 	
 	
 	public Integer getId() {
@@ -109,6 +113,12 @@ public class libros {
 	}
 	public void setImagenget(String imagenget) {
 		this.imagenget = imagenget;
+	}
+	public Date getFechacreacion() {
+		return fechacreacion;
+	}
+	public void setFechacreacion(Date fechacreacion) {
+		this.fechacreacion = fechacreacion;
 	}
 	
 	

@@ -25,7 +25,7 @@ import pe.todotic.demoSpringBootS3.service.PedidoService;
 
 @RestController
 @RequestMapping("/api/pedido")
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class PedidoController {
 
 	

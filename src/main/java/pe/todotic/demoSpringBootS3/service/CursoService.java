@@ -1,6 +1,7 @@
 package pe.todotic.demoSpringBootS3.service;
 
 import java.awt.print.Pageable;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -15,6 +16,7 @@ public interface CursoService {
 	public libros save(libros libro);
 	public void deleteById(Integer id);
 	public libros findById(int id);
+	public List<libros> findByTituloContains(String titulo);
 
 
 	/*Optional<libros> findByLibro(String libro);*/

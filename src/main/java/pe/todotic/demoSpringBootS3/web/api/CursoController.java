@@ -22,7 +22,7 @@ import pe.todotic.demoSpringBootS3.service.S3Service;
 
 @RestController
 @RequestMapping("/api/cursos")
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class CursoController {
 
 	
@@ -63,6 +63,7 @@ public class CursoController {
 		libroactual.setDescripcion(libro.getDescripcion());
 		libroactual.setImagenPhat(libro.getImagenPhat());
 		libroactual.setImagenURL(libro.getImagenURL());
+		libroactual.setFechacreacion(libro.getFechacreacion());
 		
 		System.out.println("Aquí"+libroactual.getId()+" "+ libroactual.getAutor());
 		return s3Service.save(libroactual);
@@ -72,6 +73,16 @@ public class CursoController {
 	@GetMapping ("/buscarid/{id}")
 	public libros show(@PathVariable int id) {
 		return s3Service.findById(id);
+		
+	}
+	
+	@GetMapping ("/buscarxnombre/{titulo}")
+	public List<libros> show(@PathVariable String titulo) {
+		return s3Service.findByTituloContains(titulo)
+				.stream()
+				.peek(curso -> curso.setImagenURL(s3Service.getObjectUrl(curso.getImagenPhat())))
+				.peek(curso -> curso.setImagenget(s3Service.getObjectUrl(curso.getImagenpost())))
+				.collect(Collectors.toList());
 		
 	}
 	

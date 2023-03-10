@@ -20,7 +20,7 @@ import pe.todotic.demoSpringBootS3.service.S3Service;
 
 @RestController
 @RequestMapping("/api/assets")
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class AssetController {
 	@Autowired
 	private S3Service s3Service;

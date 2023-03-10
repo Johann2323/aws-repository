@@ -22,7 +22,7 @@ import pe.todotic.demoSpringBootS3.service.CompraService;
 
 @RestController
 @RequestMapping("/api/compra")
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class CompraController {
 
 	@Autowired

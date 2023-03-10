@@ -1,6 +1,7 @@
 package pe.todotic.demoSpringBootS3.service;
 
 import java.awt.print.Pageable;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -124,6 +125,12 @@ public class S3Serviceimg implements CursoService {
 	
 	public String getObjectUrl(String key) {
 		return String.format("https://%s.s3.amazonaws.com/%s", Bucket, key);
+	}
+
+	@Override
+	public List<libros> findByTituloContains(String titulo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
